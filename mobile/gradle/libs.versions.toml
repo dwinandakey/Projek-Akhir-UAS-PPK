@@ -14,6 +14,8 @@ constraintlayout = "2.2.0"
 androidxAppCompat = "1.6.1"
 material = "1.12.0"
 cardview = "1.0.0"
+swiperefreshlayout = "1.1.0"
+materialDialogs = "3.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +40,9 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 retrofit-converter-scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+material-dialogs-core = { group = "com.afollestad.material-dialogs", name = "core", version.ref = "materialDialogs" }
+material-dialogs-input = { group = "com.afollestad.material-dialogs", name = "input", version.ref = "materialDialogs" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

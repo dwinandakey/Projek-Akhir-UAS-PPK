@@ -1,8 +1,10 @@
 package com.example.parkir.network
+import com.example.parkir.adapter.LocalDateAdapter
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
+import java.time.LocalDate
 
 // ApiClient.kt
 object ApiClient {
@@ -13,6 +15,7 @@ object ApiClient {
 
     private val gson = GsonBuilder()
         .setLenient()
+        .registerTypeAdapter(LocalDate::class.java, LocalDateAdapter())
         .create()
 
     private val retrofit = Retrofit.Builder()

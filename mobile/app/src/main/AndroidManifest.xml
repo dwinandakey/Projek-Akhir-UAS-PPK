@@ -39,6 +39,11 @@
         <activity
             android:name=".activity.MainAdminActivity"
             android:exported="false" />
+
+        <activity android:name=".activity.UserManagementActivity" />
+        <activity android:name=".activity.LocationManagementActivity" />
+        <activity android:name=".activity.TransactionManagementActivity" />
+        <activity android:name=".activity.VehicleManagementActivity" />
     </application>
 
 </manifest>

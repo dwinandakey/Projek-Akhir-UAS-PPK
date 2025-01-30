@@ -5,274 +5,139 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+        app:title="Admin Dashboard"
+        app:titleTextColor="@color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:columnCount="2"
             android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Admin Dashboard"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <!-- User Management Card -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="Sistem Parkir Polstat STIS"
-                android:textSize="20sp" />
+            <!-- Location Management Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLocations"
+                style="@style/AdminDashboardCard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp">
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="3">
+                <LinearLayout style="@style/AdminCardContent">
+                    <ImageView
+                        style="@style/AdminCardIcon"
+                        android:src="@drawable/ic_location"/>
+                    <TextView
+                        style="@style/AdminCardTitle"
+                        android:text="Locations"/>
+                    <TextView
+                        style="@style/AdminCardSubtitle"
+                        android:text="Manage parking locations"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardManageUser"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+            <!-- Transaction Management Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTransactions"
+                style="@style/AdminDashboardCard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                <LinearLayout style="@style/AdminCardContent">
+                    <ImageView
+                        style="@style/AdminCardIcon"
+                        android:src="@drawable/ic_payment"/>
+                    <TextView
+                        style="@style/AdminCardTitle"
+                        android:text="Transactions"/>
+                    <TextView
+                        style="@style/AdminCardSubtitle"
+                        android:text="View and manage transactions"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_people"
-                            app:tint="?attr/colorPrimary" />
+            <!-- Vehicle Management Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVehicles"
+                style="@style/AdminDashboardCard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Kelola User"
-                            android:textStyle="bold" />
+                <LinearLayout style="@style/AdminCardContent">
+                    <ImageView
+                        style="@style/AdminCardIcon"
+                        android:src="@drawable/ic_directions_car"/>
+                    <TextView
+                        style="@style/AdminCardTitle"
+                        android:text="Vehicles"/>
+                    <TextView
+                        style="@style/AdminCardSubtitle"
+                        android:text="Manage registered vehicles"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Manajemen data user"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+            <!-- Reports Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReports"
+                style="@style/AdminDashboardCard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardManageLocation"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                <LinearLayout style="@style/AdminCardContent">
+                    <ImageView
+                        style="@style/AdminCardIcon"
+                        android:src="@drawable/ic_assessment"/>
+                    <TextView
+                        style="@style/AdminCardTitle"
+                        android:text="Reports"/>
+                    <TextView
+                        style="@style/AdminCardSubtitle"
+                        android:text="View income and statistics"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+            <!-- Search Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSearch"
+                style="@style/AdminDashboardCard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp">
 
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_location"
-                            app:tint="?attr/colorPrimary" />
+                <LinearLayout style="@style/AdminCardContent">
+                    <ImageView
+                        style="@style/AdminCardIcon"
+                        android:src="@drawable/ic_search"/>
+                    <TextView
+                        style="@style/AdminCardTitle"
+                        android:text="Search"/>
+                    <TextView
+                        style="@style/AdminCardSubtitle"
+                        android:text="Search records"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Kelola Lokasi"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Manajemen lokasi parkir"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardManageVehicle"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_vehicle"
-                            app:tint="?attr/colorPrimary" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Kelola Kendaraan"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Manajemen data kendaraan"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardManageTransaction"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_payment"
-                            app:tint="?attr/colorPrimary" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Kelola Transaksi"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Manajemen transaksi parkir"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardReports"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_chart"
-                            app:tint="?attr/colorPrimary" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Laporan"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Statistik dan laporan"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardSettings"
-                    android:layout_width="0dp"
-                    android:layout_height="140dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_settings"
-                            app:tint="?attr/colorPrimary" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Pengaturan"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Konfigurasi sistem"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-            </GridLayout>
-        </LinearLayout>
+        </GridLayout>
     </ScrollView>
 </LinearLayout>
