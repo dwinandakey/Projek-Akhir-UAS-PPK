@@ -4,12 +4,12 @@ data class TransaksiParkirResponse(
     val id: Long,
     val nomorPlat: String,
     val jenisKendaraan: String,
-    val kendaraan: Kendaraan,
     val waktuMasuk: String,
     val waktuKeluar: String?,
     val biaya: Double,
     val status: String,
-    val lokasiParkir: LokasiParkir // Changed from String to LokasiParkir object
+    val kendaraan: Kendaraan,
+    val lokasiParkir: LokasiParkir
 )
 
 data class LokasiParkir(

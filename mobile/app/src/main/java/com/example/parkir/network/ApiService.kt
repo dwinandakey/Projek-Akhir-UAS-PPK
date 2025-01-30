@@ -28,12 +28,12 @@ interface ApiService {
     suspend fun parkirMasuk(
         @Header("Authorization") token: String,
         @Body request: KendaraanMasukRequest
-    ): Response<TransaksiParkirResponse>
+    ): Response<TransaksiParkir>
 
     @POST("parkir/keluar")
     suspend fun parkirKeluar(
         @Header("Authorization") token: String
-    ): Response<TransaksiParkirResponse>
+    ): Response<TransaksiParkir>
 
     @GET("parkir/lokasi")
     suspend fun getLokasiParkir(

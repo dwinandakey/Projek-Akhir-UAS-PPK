@@ -8,14 +8,14 @@ import java.time.LocalDate
 
 // ApiClient.kt
 object ApiClient {
-    private const val BASE_URL = "http://192.168.5.178:8080/";
+//     private const val BASE_URL = "http://192.168.5.178:8080/";
 
     // localhost untuk Android emulator
-    // private const val BASE_URL = "http://10.0.2.2:8080/"
+    private const val BASE_URL = "http://10.0.2.2:8080/"
 
     private val gson = GsonBuilder()
-        .setLenient()
         .registerTypeAdapter(LocalDate::class.java, LocalDateAdapter())
+        .setLenient()
         .create()
 
     private val retrofit = Retrofit.Builder()
